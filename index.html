@@ -4293,15 +4293,16 @@
     video.addEventListener('play',  syncIcons);
     video.addEventListener('pause', syncIcons);
 
+    var isMobile = window.innerWidth <= 768;
     if ('IntersectionObserver' in window && visual) {
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) { openLaptop(); obs.disconnect(); }
         });
-      }, { threshold: 0.45 });
+      }, { threshold: isMobile ? 0.1 : 0.45 });
       obs.observe(visual);
     } else {
-      setTimeout(openLaptop, 700);
+      setTimeout(openLaptop, isMobile ? 300 : 700);
     }
   })();
 
@@ -4360,15 +4361,16 @@
     video.addEventListener('play',  syncIcons);
     video.addEventListener('pause', syncIcons);
 
+    var isMobile = window.innerWidth <= 768;
     if ('IntersectionObserver' in window && visual) {
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) { openLaptop(); obs.disconnect(); }
         });
-      }, { threshold: 0.45 });
+      }, { threshold: isMobile ? 0.1 : 0.45 });
       obs.observe(visual);
     } else {
-      setTimeout(openLaptop, 700);
+      setTimeout(openLaptop, isMobile ? 300 : 700);
     }
   })();
 
@@ -4434,6 +4436,7 @@
     video.addEventListener('play',  syncIcons);
     video.addEventListener('pause', syncIcons);
 
+    var isMobile = window.innerWidth <= 768;
     if ('IntersectionObserver' in window && visual) {
       var openObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -4442,11 +4445,11 @@
             openObserver.disconnect();
           }
         });
-      }, { threshold: 0.45 });
+      }, { threshold: isMobile ? 0.1 : 0.45 });
 
       openObserver.observe(visual);
     } else {
-      setTimeout(openLaptop, 700);
+      setTimeout(openLaptop, isMobile ? 300 : 700);
     }
   })();
 
