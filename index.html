@@ -2478,9 +2478,10 @@
       overflow: hidden;
     }
     .skills-card-head {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .skills-card-title {
       font-size: 18px;
@@ -2503,6 +2504,12 @@
     .edu-cards {
       grid-template-columns: 1fr;
     }
+    .mockup-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .photo-showcase {
       max-width: 100%;
       padding-top: 16px;
@@ -2521,16 +2528,16 @@
       padding: 8px 12px;
     }
     .rotating-circle {
-      position: relative;
-      top: auto;
-      right: auto;
-      margin: 0 auto 12px;
-      width: 100px;
-      height: 100px;
+      position: absolute;
+      top: -32px;
+      right: -12px;
+      margin: 0;
+      width: 110px;
+      height: 110px;
     }
     .rotating-circle svg {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
     }
 
     /* ── Sections ── */
@@ -3182,7 +3189,12 @@
   @media (max-width: 640px) {
     .site-footer { padding: 40px 20px 24px; }
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    .footer-brand { grid-column: auto; }
+    .footer-brand { grid-column: auto; align-items: center; text-align: center; }
+    .footer-icons { justify-content: center; }
+    .footer-location { justify-content: center; }
+    .footer-col-title { text-align: center; }
+    .footer-nav { align-items: center; }
+    .footer-contact-list { align-items: center; }
   }
 </style>
 </head>
