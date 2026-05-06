@@ -2512,32 +2512,47 @@
     }
     .photo-showcase {
       max-width: 100%;
-      padding-top: 16px;
+      padding-top: 36px;
+      position: relative;
+      overflow: visible;
     }
     .photo-frame {
       padding: 12px;
       border-radius: 20px;
     }
     .photo-badge {
-      top: -14px;
-      left: 12px;
-      right: 12px;
+      top: -28px;
+      left: 36px;
+      right: auto;
       transform: none;
-      justify-content: center;
+      justify-content: flex-start;
       font-size: 10px;
+      z-index: 10;
+      white-space: nowrap;
       padding: 8px 12px;
     }
     .rotating-circle {
       position: absolute;
-      top: -32px;
-      right: -12px;
+      top: 0px;
+      right: -20px;
+      left: auto;
+      transform: none;
       margin: 0;
-      width: 110px;
-      height: 110px;
+      width: 140px;
+      height: 140px;
+      z-index: 5;
     }
     .rotating-circle svg {
-      width: 110px;
-      height: 110px;
+      width: 140px;
+      height: 140px;
+    }
+    .rotating-circle .center-dot {
+      width: 44px;
+      height: 44px;
+    }
+    .rotating-circle .center-dot svg {
+      width: 20px;
+      height: 20px;
     }
 
     /* ── Sections ── */
