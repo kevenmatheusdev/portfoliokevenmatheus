@@ -673,16 +673,22 @@
     function openLaptop() {
       if (hasOpened) return;
       hasOpened = true;
+      var mobile = window.innerWidth <= 768;
       laptop.classList.remove('is-closed');
-      laptop.classList.add('is-opening');
-      setTimeout(function() {
-        laptop.classList.remove('is-opening');
+      if (mobile) {
         playVideoAfterOpen();
-      }, 1180);
+      } else {
+        laptop.classList.add('is-opening');
+        setTimeout(function() {
+          laptop.classList.remove('is-opening');
+          playVideoAfterOpen();
+        }, 1180);
+      }
     }
 
     prepareVideoForAutoplay();
-    video.pause();
+    var isMobileInit = window.innerWidth <= 768;
+    if (!isMobileInit) video.pause();
     syncIcons();
 
     overlay.addEventListener('click', function() {
@@ -764,16 +770,22 @@
     function openLaptop() {
       if (hasOpened) return;
       hasOpened = true;
+      var mobile = window.innerWidth <= 768;
       laptop.classList.remove('is-closed');
-      laptop.classList.add('is-opening');
-      setTimeout(function() {
-        laptop.classList.remove('is-opening');
+      if (mobile) {
         playVideoAfterOpen();
-      }, 1180);
+      } else {
+        laptop.classList.add('is-opening');
+        setTimeout(function() {
+          laptop.classList.remove('is-opening');
+          playVideoAfterOpen();
+        }, 1180);
+      }
     }
 
     prepareVideoForAutoplay();
-    video.pause();
+    var isMobileInit = window.innerWidth <= 768;
+    if (!isMobileInit) video.pause();
     syncIcons();
 
     overlay.addEventListener('click', function() {
@@ -855,17 +867,22 @@
     function openLaptop() {
       if (hasOpened) return;
       hasOpened = true;
+      var mobile = window.innerWidth <= 768;
       laptop.classList.remove('is-closed');
-      laptop.classList.add('is-opening');
-
-      setTimeout(function() {
-        laptop.classList.remove('is-opening');
+      if (mobile) {
         playVideoAfterOpen();
-      }, 1180);
+      } else {
+        laptop.classList.add('is-opening');
+        setTimeout(function() {
+          laptop.classList.remove('is-opening');
+          playVideoAfterOpen();
+        }, 1180);
+      }
     }
 
     prepareVideoForAutoplay();
-    video.pause();
+    var isMobileInit = window.innerWidth <= 768;
+    if (!isMobileInit) video.pause();
     syncIcons();
 
     overlay.addEventListener('click', function() {
