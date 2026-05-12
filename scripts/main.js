@@ -329,7 +329,7 @@ function initCarousel() {
   var nextBtn = document.getElementById('carouselNext');
   var dotsContainer = document.getElementById('carouselDots');
 
-  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+  if (!track || !dotsContainer) return;
 
   var cards = track.querySelectorAll('.carousel-card');
   var dots = dotsContainer.querySelectorAll('.carousel-dot');
@@ -375,15 +375,19 @@ function initCarousel() {
     startAutoplay();
   }
 
-  prevBtn.addEventListener('click', function() {
-    goToSlide(currentIndex - 1);
-    resetAutoplay();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      goToSlide(currentIndex - 1);
+      resetAutoplay();
+    });
+  }
 
-  nextBtn.addEventListener('click', function() {
-    goToSlide(currentIndex + 1);
-    resetAutoplay();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      goToSlide(currentIndex + 1);
+      resetAutoplay();
+    });
+  }
 
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
@@ -453,7 +457,7 @@ function initCertsCarousel() {
   var nextBtn = document.getElementById('certsCarouselNext');
   var dotsContainer = document.getElementById('certsCarouselDots');
 
-  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+  if (!track || !dotsContainer) return;
 
   var cards = track.querySelectorAll('.certs-carousel-card');
   var dots = dotsContainer.querySelectorAll('.carousel-dot');
@@ -514,15 +518,19 @@ function initCertsCarousel() {
     startAutoplay();
   }
 
-  prevBtn.addEventListener('click', function() {
-    goToSlide(currentIndex - 1);
-    resetAutoplay();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      goToSlide(currentIndex - 1);
+      resetAutoplay();
+    });
+  }
 
-  nextBtn.addEventListener('click', function() {
-    goToSlide(currentIndex + 1);
-    resetAutoplay();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      goToSlide(currentIndex + 1);
+      resetAutoplay();
+    });
+  }
 
   dots.forEach(function(dot) {
     dot.addEventListener('click', function() {
