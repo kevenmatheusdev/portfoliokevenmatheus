@@ -2698,14 +2698,14 @@
       overflow: hidden;
     }
     .carousel-card-visual {
-      min-height: 220px;
+      min-height: 300px;
       width: 100%;
       overflow: visible;
     }
     .carousel-card-visual .mockup-laptop {
-      transform: scale(0.6);
-      width: calc(100% - 36px);
-      max-width: 560px;
+      transform: scale(0.86);
+      width: calc(100% - 12px);
+      max-width: 640px;
     }
     .carousel-card-title {
       font-size: clamp(18px, 5vw, 24px);
