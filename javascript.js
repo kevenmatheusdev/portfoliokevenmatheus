@@ -66,6 +66,10 @@
       'projects.third.desc': 'Gerador IA Self é uma plataforma inteligente que transforma ideias em código e conteúdo de forma rápida e prática. Com uma interface moderna e intuitiva, o site permite gerar soluções criativas usando inteligência artificial, facilitando o desenvolvimento de projetos digitais, automações e experiências visuais.',
       'projects.third.ctaPrimary': 'Ver projeto',
       'projects.third.ctaSecondary': 'Mais projetos',
+      'projects.fourth.label': 'Projeto 04',
+      'projects.fourth.title': 'Landing Page Profissional — Assistente Social Jaciandra Carvalho',
+      'projects.fourth.desc': 'Landing page moderna e estratégica com foco em apresentação profissional, fortalecimento da presença digital e captação de novos contatos, com design responsivo e estrutura otimizada para conversão.',
+      'projects.fourth.ctaPrimary': 'Ver projeto',
       'projects.second.mockup.eyebrow': 'Catalogo online',
       'projects.second.mockup.title': 'Vitrine pensada para destacar categorias, ofertas e produtos com clareza.',
       'projects.second.mockup.copy': 'Estrutura leve, blocos bem organizados e navegacao visual para acelerar a descoberta dos itens principais.',
@@ -193,6 +197,10 @@
       'projects.third.desc': 'Gerador IA Self is an intelligent platform that transforms ideas into code and content quickly and practically. With a modern and intuitive interface, the site allows generating creative solutions using artificial intelligence, facilitating the development of digital projects, automations and visual experiences.',
       'projects.third.ctaPrimary': 'View project',
       'projects.third.ctaSecondary': 'More projects',
+      'projects.fourth.label': 'Project 04',
+      'projects.fourth.title': 'Professional Landing Page — Social Worker Jaciandra Carvalho',
+      'projects.fourth.desc': 'A modern, strategic landing page focused on professional presentation, strengthening digital presence, and capturing new contacts, with responsive design and a conversion-optimized structure.',
+      'projects.fourth.ctaPrimary': 'View project',
       'projects.second.mockup.eyebrow': 'Online catalog',
       'projects.second.mockup.title': 'A storefront designed to highlight categories, offers, and products with clarity.',
       'projects.second.mockup.copy': 'Lightweight structure, well-organized blocks, and visual navigation to speed up discovery of the main items.',
@@ -471,7 +479,8 @@ function initProjectVideos() {
   [
     { videoId: 'mockupVideo', overlayId: 'mockupPlayOverlay', pauseId: 'iconPause', playId: 'iconPlay', laptopId: 'tiltWrap' },
     { videoId: 'mockupVideo2', overlayId: 'mockupPlayOverlay2', pauseId: 'iconPause2', playId: 'iconPlay2', laptopId: 'tiltWrap2' },
-    { videoId: 'mockupVideo3', overlayId: 'mockupPlayOverlay3', pauseId: 'iconPause3', playId: 'iconPlay3', laptopId: 'tiltWrap3' }
+    { videoId: 'mockupVideo3', overlayId: 'mockupPlayOverlay3', pauseId: 'iconPause3', playId: 'iconPlay3', laptopId: 'tiltWrap3' },
+    { videoId: 'mockupVideo4', overlayId: 'mockupPlayOverlay4', pauseId: 'iconPause4', playId: 'iconPlay4', laptopId: 'tiltWrap4' }
   ].forEach(initProjectVideo);
 }
 
@@ -483,6 +492,7 @@ function initProjectVideo(config) {
   var laptop = document.getElementById(config.laptopId);
   var visual = laptop ? laptop.closest('.carousel-card-visual') : null;
   var hasOpened = false;
+  var userPaused = false;
 
   if (!video || !overlay || !iconPause || !iconPlay || !laptop) return;
 
@@ -501,6 +511,11 @@ function initProjectVideo(config) {
   }
 
   function playVideoAfterOpen() {
+    if (userPaused) {
+      syncIcons();
+      return;
+    }
+
     prepareVideoForAutoplay();
 
     var playAttempt = video.play();
@@ -530,15 +545,20 @@ function initProjectVideo(config) {
   syncIcons();
 
   overlay.addEventListener('click', function() {
+    window.dispatchEvent(new CustomEvent('projectVideoInteracted'));
+
     if (!hasOpened) {
       openLaptop();
       return;
     }
 
     if (video.paused) {
-      video.play();
+      userPaused = false;
+      playVideoAfterOpen();
     } else {
+      userPaused = true;
       video.pause();
+      video.removeAttribute('autoplay');
     }
 
     syncIcons();
@@ -554,16 +574,16 @@ function initProjectVideo(config) {
   video.addEventListener('play', syncIcons);
   video.addEventListener('pause', syncIcons);
   video.addEventListener('loadedmetadata', function() {
-    if (hasOpened && video.paused) playVideoAfterOpen();
+    if (hasOpened && video.paused && !userPaused) playVideoAfterOpen();
   });
   video.addEventListener('canplay', function() {
-    if (hasOpened && video.paused) playVideoAfterOpen();
+    if (hasOpened && video.paused && !userPaused) playVideoAfterOpen();
   });
   window.addEventListener('pageshow', function() {
-    if (hasOpened && video.paused) playVideoAfterOpen();
+    if (hasOpened && video.paused && !userPaused) playVideoAfterOpen();
   });
   document.addEventListener('visibilitychange', function() {
-    if (!document.hidden && hasOpened && video.paused) playVideoAfterOpen();
+    if (!document.hidden && hasOpened && video.paused && !userPaused) playVideoAfterOpen();
   });
 
   var isMobile = window.innerWidth <= 768;
@@ -641,6 +661,7 @@ function initCarousel() {
   var currentTranslate = 0;
   var autoplayInterval = null;
   var autoplayDelay = 5000;
+  var autoplayPausedByVideo = false;
 
   function goToSlide(index) {
     if (index < 0) index = totalCards - 1;
@@ -658,6 +679,8 @@ function initCarousel() {
   }
 
   function startAutoplay() {
+    if (autoplayPausedByVideo) return;
+
     stopAutoplay();
     autoplayInterval = setInterval(function() {
       goToSlide(currentIndex + 1);
@@ -673,7 +696,13 @@ function initCarousel() {
 
   function resetAutoplay() {
     stopAutoplay();
+    if (autoplayPausedByVideo) return;
     startAutoplay();
+  }
+
+  function pauseAutoplayForVideo() {
+    autoplayPausedByVideo = true;
+    stopAutoplay();
   }
 
   if (prevBtn) {
@@ -738,6 +767,8 @@ function initCarousel() {
     wrapper.addEventListener('mouseenter', stopAutoplay);
     wrapper.addEventListener('mouseleave', startAutoplay);
   }
+
+  window.addEventListener('projectVideoInteracted', pauseAutoplayForVideo);
 
   // Pause when tab is hidden
   document.addEventListener('visibilitychange', function() {
