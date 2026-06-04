@@ -57,19 +57,30 @@
       'projects.tech.finAutomation': 'Automação Financeira',
       'projects.video.toggle': 'Pausar/Reproduzir vídeo',
       'projects.second.label': 'Projeto 02',
-      'projects.second.title': 'Catalogo PP Sports — vitrine digital para produtos esportivos',
-      'projects.second.desc': 'Landing page comercial criada para apresentar catalogo, categorias e destaques com navegacao simples, visual direto e foco em conversao. O objetivo do projeto e transformar a apresentacao dos produtos em uma experiencia mais clara, organizada e profissional para o cliente final.',
+      'projects.second.title': 'CSS Gerador com IA — plataforma inteligente de geração de código',
+      'projects.second.desc': 'Gerador IA Self é uma plataforma inteligente que transforma ideias em código e conteúdo de forma rápida e prática. Com uma interface moderna e intuitiva, o site permite gerar soluções criativas usando inteligência artificial, facilitando o desenvolvimento de projetos digitais, automações e experiências visuais.',
       'projects.second.ctaPrimary': 'Ver projeto',
       'projects.second.ctaSecondary': 'Mais projetos',
       'projects.third.label': 'Projeto 03',
-      'projects.third.title': 'CSS Gerador com IA — plataforma inteligente de geração de código',
-      'projects.third.desc': 'Gerador IA Self é uma plataforma inteligente que transforma ideias em código e conteúdo de forma rápida e prática. Com uma interface moderna e intuitiva, o site permite gerar soluções criativas usando inteligência artificial, facilitando o desenvolvimento de projetos digitais, automações e experiências visuais.',
+      'projects.third.title': 'Landing Page Profissional — Assistente Social Jaciandra Carvalho',
+      'projects.third.desc': 'Landing page moderna e estratégica com foco em apresentação profissional, fortalecimento da presença digital e captação de novos contatos, com design responsivo e estrutura otimizada para conversão.',
       'projects.third.ctaPrimary': 'Ver projeto',
       'projects.third.ctaSecondary': 'Mais projetos',
       'projects.fourth.label': 'Projeto 04',
-      'projects.fourth.title': 'Landing Page Profissional — Assistente Social Jaciandra Carvalho',
-      'projects.fourth.desc': 'Landing page moderna e estratégica com foco em apresentação profissional, fortalecimento da presença digital e captação de novos contatos, com design responsivo e estrutura otimizada para conversão.',
+      'projects.fourth.title': 'Catalogo PP Sports — vitrine digital para produtos esportivos',
+      'projects.fourth.desc': 'Landing page comercial criada para apresentar catalogo, categorias e destaques com navegacao simples, visual direto e foco em conversao. O objetivo do projeto e transformar a apresentacao dos produtos em uma experiencia mais clara, organizada e profissional para o cliente final.',
       'projects.fourth.ctaPrimary': 'Ver projeto',
+      'projects.fifth.label': 'Projeto 05',
+      'projects.fifth.title': 'Super Mario Encanador',
+      'projects.fifth.desc': 'Landing page responsiva inspirada no universo do Mario & Luigi, desenvolvida com HTML, CSS e JavaScript puro. O projeto foi criado com foco em praticar desenvolvimento front-end, responsividade, manipulação do DOM e criação de interfaces modernas e interativas. A aplicação conta com vídeo de fundo, formulário de contato funcional, animações visuais e um layout adaptável para diferentes dispositivos, proporcionando uma experiência mais dinâmica e intuitiva ao usuário.',
+      'projects.fifth.ctaPrimary': 'GitHub',
+      'projects.fifth.ctaSecondary': 'Ver demo',
+      'projects.sixth.label': 'Projeto 06',
+      'projects.sixth.title': 'MWN Sports | Desenvolvimento de Loja Virtual',
+      'projects.sixth.desc': 'Desenvolvimento e personalização da loja virtual da MWN Sports utilizando Shopify como plataforma principal. O projeto envolveu melhorias com código personalizado, navegação responsiva e otimizada, integração do checkout Yampi e do gateway de pagamentos Appmax, com foco em uma operação de e-commerce moderna, segura e preparada para conversão.',
+      'projects.sixth.ctaPrimary': 'Ver demo',
+      'projects.more.cta': 'Ver outros projetos',
+      'projects.drawer.title': 'Todos os <span>Projetos</span>',
       'projects.second.mockup.eyebrow': 'Catalogo online',
       'projects.second.mockup.title': 'Vitrine pensada para destacar categorias, ofertas e produtos com clareza.',
       'projects.second.mockup.copy': 'Estrutura leve, blocos bem organizados e navegacao visual para acelerar a descoberta dos itens principais.',
@@ -188,19 +199,30 @@
       'projects.tech.finAutomation': 'Financial Automation',
       'projects.video.toggle': 'Pause/Play video',
       'projects.second.label': 'Project 02',
-      'projects.second.title': 'Catalogo PP Sports — digital storefront for sports products',
-      'projects.second.desc': 'A commercial landing page created to showcase the catalog, categories, and featured items with simple navigation, direct visuals, and a strong focus on conversion. The goal of the project is to turn product presentation into a clearer, more organized, and more professional experience for the end customer.',
+      'projects.second.title': 'CSS Generator with AI — intelligent code generation platform',
+      'projects.second.desc': 'Gerador IA Self is an intelligent platform that transforms ideas into code and content quickly and practically. With a modern and intuitive interface, the site allows generating creative solutions using artificial intelligence, facilitating the development of digital projects, automations and visual experiences.',
       'projects.second.ctaPrimary': 'View project',
       'projects.second.ctaSecondary': 'More projects',
       'projects.third.label': 'Project 03',
-      'projects.third.title': 'CSS Generator with AI — intelligent code generation platform',
-      'projects.third.desc': 'Gerador IA Self is an intelligent platform that transforms ideas into code and content quickly and practically. With a modern and intuitive interface, the site allows generating creative solutions using artificial intelligence, facilitating the development of digital projects, automations and visual experiences.',
+      'projects.third.title': 'Professional Landing Page — Social Worker Jaciandra Carvalho',
+      'projects.third.desc': 'A modern, strategic landing page focused on professional presentation, strengthening digital presence, and capturing new contacts, with responsive design and a conversion-optimized structure.',
       'projects.third.ctaPrimary': 'View project',
       'projects.third.ctaSecondary': 'More projects',
       'projects.fourth.label': 'Project 04',
-      'projects.fourth.title': 'Professional Landing Page — Social Worker Jaciandra Carvalho',
-      'projects.fourth.desc': 'A modern, strategic landing page focused on professional presentation, strengthening digital presence, and capturing new contacts, with responsive design and a conversion-optimized structure.',
+      'projects.fourth.title': 'Catalogo PP Sports — digital storefront for sports products',
+      'projects.fourth.desc': 'A commercial landing page created to showcase the catalog, categories, and featured items with simple navigation, direct visuals, and a strong focus on conversion. The goal of the project is to turn product presentation into a clearer, more organized, and more professional experience for the end customer.',
       'projects.fourth.ctaPrimary': 'View project',
+      'projects.fifth.label': 'Project 05',
+      'projects.fifth.title': 'Super Mario Plumber',
+      'projects.fifth.desc': 'A responsive landing page inspired by the Mario & Luigi universe, developed with pure HTML, CSS, and JavaScript. The project was created to practice front-end development, responsiveness, DOM manipulation, and the creation of modern, interactive interfaces. The application features a background video, functional contact form, visual animations, and an adaptable layout for different devices, providing a more dynamic and intuitive user experience.',
+      'projects.fifth.ctaPrimary': 'GitHub',
+      'projects.fifth.ctaSecondary': 'View demo',
+      'projects.sixth.label': 'Project 06',
+      'projects.sixth.title': 'MWN Sports | Online Store Development',
+      'projects.sixth.desc': 'Development and customization of the MWN Sports online store using Shopify as the main platform. The project included improvements with custom code, responsive and optimized navigation, Yampi checkout integration, and the Appmax payment gateway, focusing on a modern, secure, conversion-ready e-commerce operation.',
+      'projects.sixth.ctaPrimary': 'View demo',
+      'projects.more.cta': 'View other projects',
+      'projects.drawer.title': 'All <span>Projects</span>',
       'projects.second.mockup.eyebrow': 'Online catalog',
       'projects.second.mockup.title': 'A storefront designed to highlight categories, offers, and products with clarity.',
       'projects.second.mockup.copy': 'Lightweight structure, well-organized blocks, and visual navigation to speed up discovery of the main items.',
@@ -289,6 +311,8 @@
     var ptLabel = document.getElementById('lang-pt');
     var enLabel = document.getElementById('lang-en');
 
+    if (!pill || !ptLabel || !enLabel) return;
+
     if (lang === 'en') {
       pill.classList.add('en');
       ptLabel.style.opacity = '0.4';
@@ -316,6 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initRevealAnimations();
   initCarousel();
   initCertsCarousel();
+  initProjectsDrawer();
 });
 
 function initNav() {
@@ -902,4 +927,49 @@ function initCertsCarousel() {
   }
 
   startAutoplay();
+}
+
+function initProjectsDrawer() {
+  var drawer = document.getElementById('projectsDrawer');
+  var openButtons = document.querySelectorAll('[data-projects-drawer-open]');
+  var closeButtons = document.querySelectorAll('[data-projects-drawer-close]');
+  var lastFocusedElement = null;
+
+  if (!drawer || !openButtons.length) return;
+
+  function openDrawer(event) {
+    if (event) event.preventDefault();
+
+    lastFocusedElement = document.activeElement;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('projects-drawer-open');
+
+    var closeButton = drawer.querySelector('.projects-drawer-close');
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('projects-drawer-open');
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+  }
+
+  openButtons.forEach(function(button) {
+    button.addEventListener('click', openDrawer);
+  });
+
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
 }
