@@ -136,7 +136,12 @@
       'certs.copy': 'Certificações que comprovam o aprendizado contínuo e o domínio das tecnologias que aplico nos projetos.',
       'certs.cert1.title': 'Desenvolvimento HTML',
       'certs.cert2.title': 'Desenvolvimento CSS',
+      'certs.cert3.title': 'Missão Programação com IA do Zero',
+      'certs.cert4.title': 'Git e GitHub',
+      'certs.cert4.desc': 'Certificado emitido pela DevClub, reforçando fundamentos de versionamento de código, fluxo de trabalho com Git e organização de repositórios no GitHub.',
       'certs.badge': 'Concluído',
+      'certs.more.cta': 'Ver outros certificados',
+      'certs.drawer.title': 'Todos os <span>Certificados</span>',
       'footer.nav.home': 'Início',
       'footer.nav.about': 'Sobre mim',
       'footer.nav.projects': 'Projetos',
@@ -278,7 +283,12 @@
       'certs.copy': 'Certifications that prove continuous learning and mastery of the technologies I apply in my projects.',
       'certs.cert1.title': 'HTML Development',
       'certs.cert2.title': 'CSS Development',
+      'certs.cert3.title': 'Programming with AI from Zero Mission',
+      'certs.cert4.title': 'Git and GitHub',
+      'certs.cert4.desc': 'Certificate issued by DevClub, reinforcing code versioning fundamentals, Git workflow, and repository organization on GitHub.',
       'certs.badge': 'Completed',
+      'certs.more.cta': 'View other certificates',
+      'certs.drawer.title': 'All <span>Certificates</span>',
       'footer.nav.home': 'Home',
       'footer.nav.about': 'About me',
       'footer.nav.projects': 'Projects',
@@ -341,6 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initCarousel();
   initCertsCarousel();
   initProjectsDrawer();
+  initCertsDrawer();
 });
 
 function initNav() {
@@ -817,7 +828,7 @@ function initCertsCarousel() {
   if (!track || !dotsContainer) return;
 
   var cards = track.querySelectorAll('.certs-carousel-card');
-  var dots = dotsContainer.querySelectorAll('.carousel-dot');
+  var dots = [];
   var currentIndex = 0;
   var totalCards = cards.length;
   var startX = 0;
@@ -835,6 +846,30 @@ function initCertsCarousel() {
   function getMaxIndex() {
     var visible = getVisibleCount();
     return Math.max(0, totalCards - visible);
+  }
+
+  function renderDots() {
+    var maxIndex = getMaxIndex();
+    dotsContainer.innerHTML = '';
+
+    for (var i = 0; i <= maxIndex; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('data-index', i);
+      dot.setAttribute('aria-label', 'Certificado ' + (i + 1));
+      dotsContainer.appendChild(dot);
+    }
+
+    dots = dotsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        var index = parseInt(dot.getAttribute('data-index'), 10);
+        goToSlide(index);
+        resetAutoplay();
+      });
+    });
+
+    updateDots();
   }
 
   function goToSlide(index) {
@@ -889,14 +924,6 @@ function initCertsCarousel() {
     });
   }
 
-  dots.forEach(function(dot) {
-    dot.addEventListener('click', function() {
-      var index = parseInt(dot.getAttribute('data-index'), 10);
-      goToSlide(index);
-      resetAutoplay();
-    });
-  });
-
   // Touch/swipe
   track.addEventListener('touchstart', function(e) {
     startX = e.touches[0].clientX;
@@ -926,6 +953,11 @@ function initCertsCarousel() {
     wrapper.addEventListener('mouseleave', startAutoplay);
   }
 
+  renderDots();
+  window.addEventListener('resize', function() {
+    renderDots();
+    goToSlide(currentIndex);
+  });
   startAutoplay();
 }
 
@@ -933,6 +965,51 @@ function initProjectsDrawer() {
   var drawer = document.getElementById('projectsDrawer');
   var openButtons = document.querySelectorAll('[data-projects-drawer-open]');
   var closeButtons = document.querySelectorAll('[data-projects-drawer-close]');
+  var lastFocusedElement = null;
+
+  if (!drawer || !openButtons.length) return;
+
+  function openDrawer(event) {
+    if (event) event.preventDefault();
+
+    lastFocusedElement = document.activeElement;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('projects-drawer-open');
+
+    var closeButton = drawer.querySelector('.projects-drawer-close');
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('projects-drawer-open');
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+  }
+
+  openButtons.forEach(function(button) {
+    button.addEventListener('click', openDrawer);
+  });
+
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+}
+
+function initCertsDrawer() {
+  var drawer = document.getElementById('certsDrawer');
+  var openButtons = document.querySelectorAll('[data-certs-drawer-open]');
+  var closeButtons = document.querySelectorAll('[data-certs-drawer-close]');
   var lastFocusedElement = null;
 
   if (!drawer || !openButtons.length) return;

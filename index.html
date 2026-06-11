@@ -635,16 +635,78 @@
 
       <!-- Navigation controls -->
       <div class="carousel-controls certs-carousel-controls">
-        <div class="carousel-dots" id="certsCarouselDots">
-          <button class="carousel-dot active" data-index="0" aria-label="Certificado 1"></button>
-          <button class="carousel-dot" data-index="1" aria-label="Certificado 2"></button>
-          <button class="carousel-dot" data-index="2" aria-label="Certificado 3"></button>
-        </div>
+        <div class="carousel-dots" id="certsCarouselDots"></div>
       </div>
 
     </div>
+
+    <div class="projects-more-actions">
+      <a class="projects-more-btn" href="#certificados" data-certs-drawer-open>
+        <span data-i18n="certs.more.cta">Ver outros certificados</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
+
+<aside class="projects-drawer certs-drawer" id="certsDrawer" aria-hidden="true">
+  <div class="projects-drawer-backdrop" data-certs-drawer-close></div>
+  <div class="projects-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="certsDrawerTitle">
+    <button class="projects-drawer-close" type="button" aria-label="Fechar certificados" data-certs-drawer-close>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+
+    <div class="projects-drawer-head">
+      <h2 id="certsDrawerTitle" data-i18n-html="certs.drawer.title">Todos os <span>Certificados</span></h2>
+    </div>
+
+    <div class="projects-drawer-grid certs-drawer-grid">
+      <article class="drawer-project-card cert-drawer-card">
+        <div class="drawer-project-media certs-drawer-media">
+          <img src="assets/HTML.png" alt="Certificado HTML — DevClub">
+        </div>
+        <div class="drawer-project-body cert-drawer-body">
+          <h3 data-i18n="certs.cert1.title">Desenvolvimento HTML</h3>
+          <span class="certs-carousel-issuer">DevClub</span>
+          <span class="certs-carousel-badge" data-i18n="certs.badge">Concluído</span>
+        </div>
+      </article>
+
+      <article class="drawer-project-card cert-drawer-card">
+        <div class="drawer-project-media certs-drawer-media">
+          <img src="assets/CSS.png" alt="Certificado CSS — DevClub">
+        </div>
+        <div class="drawer-project-body cert-drawer-body">
+          <h3 data-i18n="certs.cert2.title">Desenvolvimento CSS</h3>
+          <span class="certs-carousel-issuer">DevClub</span>
+          <span class="certs-carousel-badge" data-i18n="certs.badge">Concluído</span>
+        </div>
+      </article>
+
+      <article class="drawer-project-card cert-drawer-card">
+        <div class="drawer-project-media certs-drawer-media">
+          <img src="assets/IA.png" alt="Certificado Missão Programação com IA do Zero — DevClub">
+        </div>
+        <div class="drawer-project-body cert-drawer-body">
+          <h3 data-i18n="certs.cert3.title">Missão Programação com IA do Zero</h3>
+          <span class="certs-carousel-issuer">DevClub</span>
+          <span class="certs-carousel-badge" data-i18n="certs.badge">Concluído</span>
+        </div>
+      </article>
+
+      <article class="drawer-project-card cert-drawer-card">
+        <div class="drawer-project-media certs-drawer-media">
+          <img src="assets/Git&amp;GitHub.png" alt="Certificado Git e GitHub — DevClub">
+        </div>
+        <div class="drawer-project-body cert-drawer-body">
+          <h3 data-i18n="certs.cert4.title">Git e GitHub</h3>
+          <span class="certs-carousel-issuer">DevClub</span>
+          <span class="certs-carousel-badge" data-i18n="certs.badge">Concluído</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</aside>
 
 <section id="contato" class="content-section">
   <div class="section-shell" style="background:transparent;border:none;box-shadow:none;padding-top:0;padding-bottom:40px;">
