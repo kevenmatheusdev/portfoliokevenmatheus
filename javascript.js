@@ -66,6 +66,9 @@
       'projects.third.desc': 'Landing page moderna e estratégica com foco em apresentação profissional, fortalecimento da presença digital e captação de novos contatos, com design responsivo e estrutura otimizada para conversão.',
       'projects.third.ctaPrimary': 'Ver projeto',
       'projects.third.ctaSecondary': 'Mais projetos',
+      'projects.eighth.label': 'Projeto 04',
+      'projects.eighth.title': 'ALFA3 — Experiência digital moderna',
+      'projects.eighth.desc': 'Projeto web desenvolvido com foco em uma apresentação visual marcante, navegação clara e uma experiência responsiva para diferentes dispositivos.',
       'projects.fourth.label': 'Projeto 04',
       'projects.fourth.title': 'Catalogo PP Sports — vitrine digital para produtos esportivos',
       'projects.fourth.desc': 'Landing page comercial criada para apresentar catalogo, categorias e destaques com navegacao simples, visual direto e foco em conversao. O objetivo do projeto e transformar a apresentacao dos produtos em uma experiencia mais clara, organizada e profissional para o cliente final.',
@@ -217,6 +220,9 @@
       'projects.third.desc': 'A modern, strategic landing page focused on professional presentation, strengthening digital presence, and capturing new contacts, with responsive design and a conversion-optimized structure.',
       'projects.third.ctaPrimary': 'View project',
       'projects.third.ctaSecondary': 'More projects',
+      'projects.eighth.label': 'Project 04',
+      'projects.eighth.title': 'ALFA3 — Modern digital experience',
+      'projects.eighth.desc': 'A web project focused on a striking visual presentation, clear navigation, and a responsive experience across different devices.',
       'projects.fourth.label': 'Project 04',
       'projects.fourth.title': 'Catalogo PP Sports — digital storefront for sports products',
       'projects.fourth.desc': 'A commercial landing page created to showcase the catalog, categories, and featured items with simple navigation, direct visuals, and a strong focus on conversion. The goal of the project is to turn product presentation into a clearer, more organized, and more professional experience for the end customer.',
@@ -524,7 +530,8 @@ function initProjectVideos() {
     { videoId: 'mockupVideo', overlayId: 'mockupPlayOverlay', pauseId: 'iconPause', playId: 'iconPlay', laptopId: 'tiltWrap' },
     { videoId: 'mockupVideo2', overlayId: 'mockupPlayOverlay2', pauseId: 'iconPause2', playId: 'iconPlay2', laptopId: 'tiltWrap2' },
     { videoId: 'mockupVideo3', overlayId: 'mockupPlayOverlay3', pauseId: 'iconPause3', playId: 'iconPlay3', laptopId: 'tiltWrap3' },
-    { videoId: 'mockupVideo4', overlayId: 'mockupPlayOverlay4', pauseId: 'iconPause4', playId: 'iconPlay4', laptopId: 'tiltWrap4' }
+    { videoId: 'mockupVideo4', overlayId: 'mockupPlayOverlay4', pauseId: 'iconPause4', playId: 'iconPlay4', laptopId: 'tiltWrap4' },
+    { videoId: 'mockupVideo5', overlayId: 'mockupPlayOverlay5', pauseId: 'iconPause5', playId: 'iconPlay5', laptopId: 'tiltWrap5' }
   ].forEach(initProjectVideo);
 }
 
